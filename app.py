@@ -10,8 +10,8 @@ def landing():
 @app.route("/" , methods = ['GET', 'POST']) 
 def getlink():
     youtube_link = request.form['link']
-    print(pd.video_download(youtube_link))
-    return render_template('landing.html')
+    vid = pd.video_download(youtube_link)
+    return render_template('landing.html',vid = vid)
 
 if __name__ == '__main__':
     app.run(debug=True)

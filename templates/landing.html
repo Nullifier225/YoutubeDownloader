@@ -14,6 +14,17 @@
     </script>
 
     <title>Youtube Downloader</title>
+
+    <script type="text/javascript">
+        function showSearchResults() {
+            var x = document.getElementById("search-results");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+    </script>
 </head>
 
 <body>
@@ -29,13 +40,32 @@
                 <div class='row pl-3 pb-3'>
                     <form class="form-inline" method="post">
                         <label class="form-group mx-sm-4 mt-3 mb-1  ">
-                            <input class="form-control" name="link" id="link" type="search" placeholder="Search" aria-label="Search">
+                            <input class="form-control" name="link" id="link" type="search" placeholder="Search"
+                                aria-label="Search">
                         </label>
                         <span class="input-group-btn">
-                            <button type="submit" class="btn btn-outline-success mx-sm-3 mb-2">Search</button>
+                            <button type="submit" onclick="showSearchResults();"
+                                class="btn btn-outline-success mx-sm-3 mb-2">Search</button>
                         </span>
                     </form>
                 </div>
+
+                <div name="search-results" id="search-results" class="row pl-3 pb-3" none>
+                    <form class="form-inline" method="post">
+                        <label class="form-group mx-sm-4 mt-3 mb-1  ">
+                            <input class="form-control" type="select" aria-label="mp3/mp4">
+                            <option disabled>Select</option>
+                            <option value='True'>mp3</option>
+                            <option value='False'>mp4</option>
+                        </label>
+                        <span class="input-group-btn">
+                            <button type="submit" onclick="showSearchResults();"
+                                class="btn btn-outline-success mx-sm-3 mb-2">Search</button>
+                        </span>
+                    </form>
+                    <span style="color: white;">{{vid}}</span>
+                </div>
+
             </div>
         </div>
     </div>
