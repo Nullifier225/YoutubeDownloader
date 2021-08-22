@@ -12,13 +12,14 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs/dist/tf.min.js"> </script>
 
     <title>Youtube Downloader</title>
 
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
 
         function showDiv(select) {
-            if (select.value == 'True') {
+            if (select.value == true) {
                 document.getElementById('mp3-hidden').style.display = "block";
                 document.getElementById('mp4-hidden').style.display = "none";
             } else {
@@ -26,7 +27,7 @@
                 document.getElementById('mp3-hidden').style.display = "none";
             }
         }
-    </script>
+    </script> -->
 </head>
 
 <body>
@@ -43,16 +44,18 @@
                     <input style="width: 40%;" class="form-control" name="link" id="link" type="search"
                         placeholder="Search">
                     <select name ='choice' id='choice' style="width: 40%;margin-top: 10px;" class="form-control" onchange="showDiv(this);">
-                        <option value='True'>mp3</option>
-                        <option value='Flase'>mp4</option>
+                        <option value=true>mp3</option>
+                        <option value=false>mp4</option>
                     </select>
-                    <div id="mp3-hidden" style="display: none;width: 40%;margin-top: 10px;">
+                    <!-- <div id="mp3-hidden" style="display: none;width: 40%;margin-top: 10px;">
                         Downloaded mp3 in Downloads folder!!
                     </div>
 
                     <div id="mp4-hidden" style="display: none;width: 40%;margin-top: 10px;">
                         Downloaded mp4 in Downloads folder!!
-                    </div>
+                    </div> -->
+                    <button class="btn btn-primary" style="width:10%;height:10% ;margin-top: 10px" type="submit">Download</button>
+                    
                 </form>
             </div>
         </div>
